@@ -195,7 +195,7 @@ export class HeroSystem6eActorSheet extends ActorSheet {
     });
 
     // Rollable abilities.
-    html.find('.rollable-characteristic').click(this._onRollCharacteristic.bind(this));
+    html.find('.rollable-characteristic').click(this._onCharacteristicRoll.bind(this));
     html.find('.rollable-skill').click(this._onRollSkill.bind(this));
     html.find('.item-attack').click(this._onItemAttack.bind(this));
     html.find('.item-toggle').click(this._onItemToggle.bind(this));
@@ -260,10 +260,10 @@ export class HeroSystem6eActorSheet extends ActorSheet {
   /**
    * Handles a characteristic roll click event.
    *
-   * @param {Event} event   The originating click event
+   * @param {Event} event The originating click event
    * @private
    */
-  async _onRollCharacteristic(event) {
+  async _onCharacteristicRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
