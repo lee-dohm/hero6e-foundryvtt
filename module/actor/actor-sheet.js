@@ -196,7 +196,7 @@ export class HeroSystem6eActorSheet extends ActorSheet {
 
     // Rollable abilities.
     html.find('.rollable-characteristic').click(this._onCharacteristicRoll.bind(this));
-    html.find('.rollable-skill').click(this._onRollSkill.bind(this));
+    html.find('.rollable-skill').click(this._onSkillRoll.bind(this));
     html.find('.item-attack').click(this._onItemAttack.bind(this));
     html.find('.item-toggle').click(this._onItemToggle.bind(this));
     html.find('.recovery-button').click(this._onRecovery.bind(this));
@@ -281,7 +281,12 @@ export class HeroSystem6eActorSheet extends ActorSheet {
     }
   }
 
-  _onRollSkill(event) {
+  /**
+   * Handles a skill roll click event.
+   *
+   * @param {Event} event The originating click event
+   */
+  _onSkillRoll(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
@@ -291,6 +296,7 @@ export class HeroSystem6eActorSheet extends ActorSheet {
       let result = roll.roll();
       let item = this.actor.items.get(dataset.label);
       let margin = dataset.roll - roll.total;
+
       result.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
         flavor: item.name.toUpperCase() + " roll " + (margin >= 0 ? "succeeded" : "failed") + " by " + Math.abs(margin),
