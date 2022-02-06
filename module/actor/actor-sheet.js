@@ -258,18 +258,19 @@ export class HeroSystem6eActorSheet extends ActorSheet {
     }
 
   /**
-   * Handle clickable rolls.
+   * Handles a characteristic roll click event.
+   *
    * @param {Event} event   The originating click event
    * @private
    */
-  _onRollCharacteristic(event) {
+  async _onRollCharacteristic(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
 
     if (dataset.roll) {
       let roll = new Roll(dataset.roll, this.actor.getRollData());
-      let result = roll.roll();
+      let result = await roll.evaluate({ async: true });
       let margin = this.actor.data.data.characteristics[dataset.label].roll - roll.total;
 
       result.toMessage({
