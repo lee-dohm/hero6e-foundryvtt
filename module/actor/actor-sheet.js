@@ -285,6 +285,7 @@ export class HeroSystem6eActorSheet extends ActorSheet {
    * Handles a skill roll click event.
    *
    * @param {Event} event The originating click event
+   * @private
    */
   _onSkillRoll(event) {
     event.preventDefault();
@@ -311,7 +312,7 @@ export class HeroSystem6eActorSheet extends ActorSheet {
 
     if (newStun > this.actor.data.data.stun.max) {
       newStun = this.actor.data.data.stun.max
-        }
+    }
 
     if (newEnd > this.actor.data.data.end.max) {
       newEnd = this.actor.data.data.end.max
@@ -325,10 +326,13 @@ export class HeroSystem6eActorSheet extends ActorSheet {
 
   async _uploadCharacterSheet(event) {
     var file = event.target.files[0];
+
     if (!file) {
       return;
     }
+
     var reader = new FileReader();
+
     reader.onload = function (event) {
       var contents = event.target.result;
 
@@ -336,12 +340,13 @@ export class HeroSystem6eActorSheet extends ActorSheet {
       let xmlDoc = parser.parseFromString(contents, "text/xml");
       this._applyCharacterSheet(xmlDoc);
     }.bind(this);
+
     reader.readAsText(file);
   }
 
   _applyCharacterSheet(sheet) {
     this._applyCharacterSheetAsync(sheet);
-    }
+  }
 
   async _applyCharacterSheetAsync(sheet) {
     let characterInfo = sheet.getElementsByTagName("CHARACTER_INFO")[0];
@@ -362,7 +367,7 @@ export class HeroSystem6eActorSheet extends ActorSheet {
     for (let item of this.actor.items) {
       if (item.data.type == "skill") {
         await item.delete();
-            }
+      }
     }
 
     for (let skill of skills.children) {
@@ -412,9 +417,11 @@ export class HeroSystem6eActorSheet extends ActorSheet {
         }
       } else {
         data["state"] = "noroll";
-            }
+      }
 
-      if (xmlid == "PROFESSIONAL_SKILL") data["ps"] = true;
+      if (xmlid == "PROFESSIONAL_SKILL") {
+        data["ps"] = true;
+      }
 
       if (skill.hasAttribute("PARENTID")) {
         data["parentid"] = skill.getAttribute("PARENTID");
@@ -434,5 +441,5 @@ export class HeroSystem6eActorSheet extends ActorSheet {
     }
 
     await this.actor.update(changes);
-    }
+  }
 }
