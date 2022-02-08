@@ -1,23 +1,17 @@
 {
   "name": "herosystem6e",
   "version": "1.0.0",
-  "description": "CSS compiler for the Hero System 6e for FoundryVTT",
+  "description": "Hero Games 6E Rules System for FoundryVTT",
   "scripts": {
-    "build": "gulp",
-    "compile": "gulp css",
-    "watch": "gulp",
-    "gulp": "gulp"
+    "build": "npm run css",
+    "css": "npx sass ./scss/herosystem6e.scss ./css/herosystem6e.css"
   },
-  "browserslist": [
-    "last 3 versions"
-  ],
-  "author": "Jared Levine",
+  "author": "Lee Dohm",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5"
+  },
+  "devDependencies": {
+    "sass": "^1.49.7"
   }
 }
