@@ -9,9 +9,8 @@
   "author": "Lee Dohm",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-  },
   "devDependencies": {
+    "prettier": "^2.5.1",
     "sass": "^1.49.7"
   }
 }
