@@ -1,3 +1,1 @@
-export default class HeroSystem6eTemplate extends MeasuredTemplate {
-
-}
+export default class HeroSystem6eTemplate extends MeasuredTemplate {}
