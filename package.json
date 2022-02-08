@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Hero Games 6E Rules System for FoundryVTT",
   "scripts": {
-    "build": "npm run css",
-    "css": "npx sass ./scss/herosystem6e.scss ./css/herosystem6e.css"
+    "build": "npm run format && npm run css",
+    "ci": "npm ci && npm run format-check && npm run css",
+    "css": "npx sass ./scss/herosystem6e.scss ./css/herosystem6e.css",
+    "format": "npx prettier --write .",
+    "format-check": "npx prettier --check ."
   },
   "author": "Lee Dohm",
   "license": "MIT",
