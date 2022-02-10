@@ -5,9 +5,9 @@
 @import 'utils/variables';
 
 // Basic styles
-@import 'global/window';
-@import 'global/grid';
 @import 'global/flex';
+@import 'global/grid';
+@import 'global/window';
 
 // Styles for specific components
 @import 'components/chat-card';
