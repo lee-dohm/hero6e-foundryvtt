@@ -1,9 +1,13 @@
 /**
- * Extend the basic ActorSheet with some very simple modifications
- * @extends {ActorSheet}
+ * Responsible for displaying and editing a single {@link HeroSystem6eActor}
+ * object.
  */
 export class HeroSystem6eActorSheet extends ActorSheet {
-  /** @override */
+  /**
+   * Returns the default options for displaying the sheet.
+   *
+   * @override
+   */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['herosystem6e', 'sheet', 'actor'],
@@ -27,12 +31,16 @@ export class HeroSystem6eActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  /** @override */
+  /**
+   * Returns the data used to render the template.
+   *
+   * @override
+   */
   getData() {
     const data = super.getData()
-    data.dtypes = ['String', 'Number', 'Boolean']
-
     const actorData = this.actor.data.toObject(false)
+
+    data.dtypes = ['String', 'Number', 'Boolean']
     data.actor = actorData
     data.data = actorData.data
     data.rollData = this.actor.getRollData.bind(this.actor)
@@ -40,7 +48,6 @@ export class HeroSystem6eActorSheet extends ActorSheet {
     data.items = actorData.items
     data.items.sort((a, b) => (a.sort || 0) - (b.sort || 0))
 
-    // Prepare items.
     if (this.actor.data.type == 'character') {
       this._prepareCharacterItems(data)
     }
