@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel:wght@400;800&family=Roboto:wght@300;400;500&display=swap");
-/* Global styles */
 .window-app {
   font-family: "Roboto", sans-serif;
 }
@@ -161,178 +160,41 @@
   flex: 4;
 }
 
-/* Styles limited to hero sheets */
-.hero.actor-sheet {
-  overflow: hidden;
-}
-.hero .item-form {
-  font-family: "Roboto", sans-serif;
-}
-.hero .sheet-header {
-  flex: 0 0 210px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-bottom: 10px;
-}
-.hero .sheet-header .profile-img {
-  flex: 0 0 100px;
-  height: 100px;
-  margin-right: 10px;
-}
-.hero .sheet-header .profile-img.borderless {
-  border: none;
-}
-.hero .sheet-header .header-fields {
-  flex: 1;
-}
-.hero .sheet-header h1.charname {
-  height: 50px;
-  padding: 0px;
-  margin: 0;
-  border-bottom: 0;
-}
-.hero .sheet-header h1.charname input {
-  width: 94%;
-  height: 100%;
-  margin: 0;
-}
-.hero .sheet-header h1.charname a {
-  align-self: center;
-}
-.hero .sheet-tabs {
-  flex: 0;
-}
-.hero .characteristic {
-  border: none;
-  height: 50px;
-}
-.hero .characteristic-roll {
-  border-radius: 20px;
-  margin-left: 4px;
-}
-.hero .characteristic-group {
-  border: 1px solid #999;
-}
-.hero .sheet-body,
-.hero .sheet-body .tab,
-.hero .sheet-body .tab .editor {
-  height: 100%;
-  overflow: auto;
-}
-.hero .tox .tox-editor-container {
-  background: #fff;
-}
-.hero .tox .tox-edit-area {
-  padding: 0 8px;
-}
-
-.hero .resource-label {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.hero .tab-body {
-  height: 100%;
-  overflow-y: auto;
-}
-.hero .tab-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  align-items: center;
-  padding: 0 5px;
-  background: #cfcdc2;
-  border: 1px solid #aaa;
-  border-radius: 2px;
-  text-align: left;
-  font-weight: bold;
-  height: 26px;
-  z-index: 1;
-}
-.hero .tab-header .item-image {
-  flex: 0 0 24px;
-  margin-right: 5px;
-}
-.hero .tab-header .item-controls {
-  flex: 0 0 86px;
-  text-align: right;
-}
-.hero .tabs {
-  height: 40px;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
-}
-.hero .tabs .item {
-  line-height: 40px;
-  font-weight: bold;
-}
-.hero .tabs .item.active {
-  text-decoration: underline;
-  text-shadow: none;
-}
-
-.hero .items-list {
-  list-style: none;
-  margin: 7px 0;
-  padding: 0;
-  height: 100%;
-}
-.hero .items-list .item-header {
-  font-weight: bold;
-  position: sticky;
-  top: 0;
-}
-.hero .items-list .item {
-  height: 30px;
-  line-height: 24px;
-  padding: 3px 0;
-  border-bottom: 1px solid #bbb;
-}
-.hero .items-list .item .item-image {
-  flex: 0 0 24px;
-  margin-right: 5px;
-}
-.hero .items-list .item img {
-  display: block;
-}
-.hero .items-list .item-name {
-  margin: 0;
-}
-.hero .items-list .item-controls {
-  flex: 0 0 110px;
-  text-align: right;
-}
-.hero .item-value {
-  text-align: center;
-}
-
-/* ----------------------------------------- */
-/*  Chat Cards
-/* ----------------------------------------- */
 .hero.chat-card {
   font-style: normal;
   font-size: 12px;
 }
-
+.hero.chat-card .card-buttons {
+  margin: 5px 0;
+}
+.hero.chat-card .card-buttons button {
+  font-size: 12px;
+  height: 24px;
+  line-height: 20px;
+  margin: 2px 0;
+}
+.hero.chat-card .card-buttons span {
+  display: block;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.hero.chat-card .card-content {
+  margin: 5px 0;
+}
+.hero.chat-card .card-content > * {
+  user-select: text;
+}
+.hero.chat-card .card-content h3 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: bold;
+}
 .hero.chat-card .card-header {
   padding: 3px 0;
   border-top: 2px groove #fff;
   border-bottom: 2px groove #fff;
 }
-
-.hero.chat-card .card-section {
-  padding: 3px 0;
-  border-bottom: 2px groove #fff;
-}
-
-.hero.chat-card .card-header img {
-  flex: 0 0 36px;
-  margin-right: 5px;
-}
-
 .hero.chat-card .card-header h3 {
   flex: 1;
   margin: 0;
@@ -342,7 +204,18 @@
   color: #4b4a44;
   display: inline-block;
 }
-
+.hero.chat-card .card-header h3:hover {
+  color: #111;
+  text-shadow: 0 0 10px red;
+}
+.hero.chat-card .card-header img {
+  flex: 0 0 36px;
+  margin-right: 5px;
+}
+.hero.chat-card .card-section {
+  padding: 3px 0;
+  border-bottom: 2px groove #fff;
+}
 .hero.chat-card .card-section .description {
   flex: 1;
   margin: 0;
@@ -352,7 +225,6 @@
   color: #4b4a44;
   text-align: center;
 }
-
 .hero.chat-card .card-section .description-small {
   flex: 1;
   margin: 0;
@@ -362,81 +234,35 @@
   color: #4b4a44;
   text-align: center;
 }
-
-.hero.chat-card .card-header h3:hover {
-  color: #111;
-  text-shadow: 0 0 10px red;
-}
-
-.hero.chat-card .card-content {
-  margin: 5px 0;
-}
-
-.hero.chat-card .card-content h3 {
-  font-size: 12px;
-  margin: 0;
-  font-weight: bold;
-}
-
-.hero.chat-card .card-content > * {
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-}
-
-.hero.chat-card .card-buttons {
-  margin: 5px 0;
-}
-
-.hero.chat-card .card-buttons span {
-  display: block;
-  line-height: 28px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
-
-.hero.chat-card .card-buttons button {
-  font-size: 12px;
-  height: 24px;
-  line-height: 20px;
-  margin: 2px 0;
-}
-
 .hero.chat-card .card-footer {
   padding: 3px 0 0;
   border-top: 2px groove #fff;
 }
-
 .hero.chat-card .card-footer span {
   border-right: 2px groove #fff;
   padding: 0 3px 0 0;
   font-size: 10px;
 }
-
 .hero.chat-card .card-footer span:last-child {
   border-right: none;
   padding-right: 0;
 }
 
-.dice-roll .dice-total.success {
-  color: inherit;
-  background: #c7d0c0;
-  border: 1px solid #006c00;
+.dice-roll .dice-total.critical {
+  color: green;
 }
-
 .dice-roll .dice-total.failure {
   color: inherit;
   background: #ffdddd;
   border: 1px solid #6e0000;
 }
-
-.dice-roll .dice-total.critical {
-  color: green;
-}
-
 .dice-roll .dice-total.fumble {
   color: red;
+}
+.dice-roll .dice-total.success {
+  color: inherit;
+  background: #c7d0c0;
+  border: 1px solid #006c00;
 }
 
 .segment-container {
@@ -523,6 +349,153 @@ form .upload-button {
 .hero .rollable-skill {
   width: 40px;
   line-height: normal;
+}
+
+.hero.actor-sheet {
+  overflow: hidden;
+}
+.hero .item-form {
+  font-family: "Roboto", sans-serif;
+}
+.hero .sheet-header {
+  flex: 0 0 210px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.hero .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.hero .sheet-header .profile-img.borderless {
+  border: none;
+}
+.hero .sheet-header .header-fields {
+  flex: 1;
+}
+.hero .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 0;
+  border-bottom: 0;
+}
+.hero .sheet-header h1.charname input {
+  width: 94%;
+  height: 100%;
+  margin: 0;
+}
+.hero .sheet-header h1.charname a {
+  align-self: center;
+}
+.hero .sheet-tabs {
+  flex: 0;
+}
+.hero .characteristic {
+  border: none;
+  height: 50px;
+}
+.hero .characteristic-roll {
+  border-radius: 20px;
+  margin-left: 4px;
+}
+.hero .characteristic-group {
+  border: 1px solid #999;
+}
+.hero .sheet-body,
+.hero .sheet-body .tab,
+.hero .sheet-body .tab .editor {
+  height: 100%;
+  overflow: auto;
+}
+.hero .tox .tox-editor-container {
+  background: #fff;
+}
+.hero .tox .tox-edit-area {
+  padding: 0 8px;
+}
+
+.hero .items-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  height: 100%;
+}
+.hero .items-list .item-header {
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+}
+.hero .items-list .item {
+  height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  border-bottom: 1px solid #bbb;
+}
+.hero .items-list .item .item-image {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.hero .items-list .item img {
+  display: block;
+}
+.hero .items-list .item-name {
+  margin: 0;
+}
+.hero .items-list .item-controls {
+  flex: 0 0 110px;
+  text-align: right;
+}
+.hero .item-value {
+  text-align: center;
+}
+
+.hero .resource-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero .tab-body {
+  height: 100%;
+  overflow-y: auto;
+}
+.hero .tab-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  align-items: center;
+  padding: 0 5px;
+  background: #cfcdc2;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  text-align: left;
+  font-weight: bold;
+  height: 26px;
+  z-index: 1;
+}
+.hero .tab-header .item-image {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.hero .tab-header .item-controls {
+  flex: 0 0 86px;
+  text-align: right;
+}
+.hero .tabs {
+  height: 40px;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+.hero .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+.hero .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
 }
 
 /*# sourceMappingURL=herosystem6e.css.map */
