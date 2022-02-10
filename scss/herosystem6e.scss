@@ -10,9 +10,8 @@
 @import 'global/flex';
 
 /* Styles limited to hero sheets */
-.hero {
-  @import 'components/forms';
-  @import 'components/resource';
-  @import 'components/tabs';
-  @import 'components/items';
-}
+@import 'components/forms';
+@import 'components/resource';
+@import 'components/tabs';
+@import 'components/items';
+@import 'components/extras';
