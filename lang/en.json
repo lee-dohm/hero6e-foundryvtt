@@ -1,1 +1,4 @@
-{}
+{
+  "HERO6E.ROLL_FAIL": "{description} roll failed by {margin}",
+  "HERO6E.ROLL_SUCCESS": "{description} roll succeeded by {margin}"
+}

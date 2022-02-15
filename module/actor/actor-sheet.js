@@ -283,15 +283,14 @@ export class HeroSystem6eActorSheet extends ActorSheet {
       let roll = new Roll(dataset.roll, this.actor.getRollData())
       let result = await roll.evaluate({ async: true })
       let margin = this.actor.data.data.characteristics[dataset.label].roll - roll.total
+      let msgId = margin >= 0 ? 'HERO6E.ROLL_SUCCESS' : 'HERO6E.ROLL_FAIL'
 
       result.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor:
-          dataset.label.toUpperCase() +
-          ' roll ' +
-          (margin >= 0 ? 'succeeded' : 'failed') +
-          ' by ' +
-          Math.abs(margin),
+        flavor: game.i18n.format(msgId, {
+          description: dataset.label.toUpperCase(),
+          margin: Math.abs(margin)
+        }),
         borderColor: margin >= 0 ? 0x00ff00 : 0xff0000
       })
     }
@@ -313,15 +312,14 @@ export class HeroSystem6eActorSheet extends ActorSheet {
       let result = roll.roll()
       let item = this.actor.items.get(dataset.label)
       let margin = dataset.roll - roll.total
+      let msgId = margin >= 0 ? 'HERO6E.ROLL_SUCCESS' : 'HERO6E.ROLL_FAIL'
 
       result.toMessage({
         speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor:
-          item.name.toUpperCase() +
-          ' roll ' +
-          (margin >= 0 ? 'succeeded' : 'failed') +
-          ' by ' +
-          Math.abs(margin),
+        flavor: game.i18n.format(msgId, {
+          description: item.name.toUpperCase(),
+          margin: Math.abs(margin)
+        }),
         borderColor: margin >= 0 ? 0x00ff00 : 0xff0000
       })
     }
